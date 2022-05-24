@@ -1,0 +1,74 @@
+{
+  "status": 200,
+  "data": {
+    "results": [
+      {
+        "user_id": "utg2001923",
+        "name": {
+          "firstName": "Pijamo",
+          "lastName": "Ngullie"
+        },
+        "address": {
+          "street": "xyz street",
+          "city": "New York",
+          "country": "United States"
+        },
+        "social": ["Email", "Github", "Linkedin"],
+        "student_status": true,
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis at erat sit amet condimentum. Proin posuere nisl sit amet nisi hendrerit, varius euismod risus porta. Proin eget aliquam lorem. Pellentesque malesuada, enim non dictum vestibulum, quam ligula aliquet massa, quis vehicula arcu tortor vel tellus - Fun Facts, Goals for MCIT/why MCIT, What are you doing/working on now (full time student, software engineer at FAANG, etc), formatting: (3-4 sentences OR bullet points organized by prompt).",
+        "class_done": [
+          "CIT 591",
+          "CIT 592",
+          "CIT 593",
+          "CIT 594",
+          "CIT 595",
+          "CIT 596"
+        ],
+        "industry": ["education", "publication", "marketing"],
+        "colab_open": true,
+        "hobbies_and_activities": ["football", "violin", "music", "anime"],
+        "programming_lang": [
+          "python",
+          "django",
+          "react",
+          "nodejs",
+          "html",
+          "css",
+          "javascript",
+          "c",
+          "java",
+          "kotlin"
+        ]
+      },
+      {
+        "user_id": "utg2001924",
+        "name": {
+          "firstName": "Jake",
+          "lastName": "Ngullie"
+        },
+        "address": {
+          "street": "xyz street",
+          "city": "California",
+          "country": "United States"
+        },
+        "social": ["Github", "Linkedin"],
+        "student_status": true,
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis at erat sit amet condimentum. Proin posuere nisl sit amet nisi hendrerit, varius euismod risus porta. Proin eget aliquam lorem. Pellentesque malesuada, enim non dictum vestibulum, quam ligula aliquet massa, quis vehicula arcu tortor vel tellus - Fun Facts, Goals for MCIT/why MCIT, What are you doing/working on now (full time student, software engineer at FAANG, etc), formatting: (3-4 sentences OR bullet points organized by prompt).",
+        "class_done": ["CIT 591", "CIT 592", "CIT 593", "CIT 594"],
+        "industry": ["healthcare", "finance"],
+        "colab_open": true,
+        "hobbies_and_activities": ["soccer", "guitar", "cooking", "reading"],
+        "programming_lang": [
+          "html",
+          "css",
+          "javascript",
+          "c",
+          "java",
+          "flutter",
+          "golang",
+          "dart"
+        ]
+      }
+    ]
+  }
+}
