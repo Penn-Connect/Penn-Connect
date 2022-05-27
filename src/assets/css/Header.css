@@ -1,0 +1,28 @@
+#header {
+  background-color: #ffffff;
+  color: #000000;
+}
+#header button {
+  color: #000000;
+  font-weight: bold;
+}
+
+#header .logo {
+  height: 40px;
+  width: 50px;
+}
+
+#desktopHeaderMenu {
+  /* display: flex; */
+  justify-content: center;
+  margin-right: 10%;
+}
+
+#desktopHeaderMenu button {
+  padding: 0px 20px;
+}
+
+#header .avatar {
+  border: 5px solid #ffffff;
+  outline: 3px solid #990000 !important;
+}
