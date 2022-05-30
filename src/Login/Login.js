@@ -12,31 +12,55 @@ import FormGroup from '@mui/material/FormGroup';
 import { FormControlLabel } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import logo from "../assets/svg/logo.svg";
-import Avatar from '@mui/material/Avatar';
+
+import "../assets/css/Login.css";
 
 export default function MediaCard() {
   // const styles = useStyles();
   return (
-    <Box bgcolor = "#011f5b">
-      <Grid container direction="column" alignItems="center" justify="center">
+    <Box class ="box">
+      <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" style={{ minHeight: '100vh' }}>
         {/* <CardMedia
         // style='text-align:center'
         // style={{ height: "100px", paddingTop: "2%" }}
+        sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
         justify="center"
         component="img"
         alt="penn logo"
         margin='auto'
+        borderRadius= '50%'
+        paddingTop= '81.25%'
         src={logo}
         /> */}
-        <Avatar alt="Penn logo" component ="image" src="logo" />
+        <Box class ="circle">
+          <Box
+          component="img"
+          sx={{
+            // display:"flex",
+            height: 50,
+            width: 50,
+            alignItems: "center",
+            justifyContent: "center"
+            // maxHeight: { xs: 100, md: 100 },
+            // maxWidth: { xs: 350, md: 250 },
+          }}
+          src={logo}
+          />
+        </Box>
         <Card sx={{ maxWidth: 375, borderRadius: 5}}>
           <CardContent >
             <Typography gutterBottom variant="h6" component="div" align="center">
               Log In
             </Typography>
-            <Grid align='center'>
-                <TextField placeholder='Email' fullWidth required/>
-                <TextField placeholder='Password' fullWidth required/>
+            <Grid align='center' style={{width: "325px"}}>
+              <Grid container direction={"column"} spacing={1}>
+                <Grid item>
+                  <TextField placeholder='Email' fullWidth required/>
+                </Grid>
+                <Grid item>
+                  <TextField placeholder='Password' fullWidth required/>
+                </Grid>
+              </Grid>
                 <FormGroup>
                   <FormControlLabel control={<Checkbox  />} label="Remember Me" />
                 </FormGroup>

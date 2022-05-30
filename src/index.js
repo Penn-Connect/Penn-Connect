@@ -22,9 +22,9 @@ let hobby = Dummy[id].hobbies_and_activities;
 
 root.render(
 
-  <section id ="loginPage">
+  <body id ="loginPage">
     <Login/>
-  </section>
+  </body>
 
   // <section id="userPage">
   //   <Header name={name} />
