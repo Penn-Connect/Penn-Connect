@@ -12,8 +12,10 @@ import FormGroup from '@mui/material/FormGroup';
 import { FormControlLabel } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import logo from "../assets/svg/logo.svg";
+import Header from "../components/global-components/Header.jsx"
 
 import "../assets/css/Login.css";
+import { flexbox } from "@mui/system";
 
 export default function MediaCard() {
   // const styles = useStyles();
@@ -32,23 +34,27 @@ export default function MediaCard() {
         paddingTop= '81.25%'
         src={logo}
         /> */}
-        <Box class ="circle">
-          <Box
-          component="img"
-          sx={{
-            // display:"flex",
-            height: 50,
-            width: 50,
-            alignItems: "center",
-            justifyContent: "center"
-            // maxHeight: { xs: 100, md: 100 },
-            // maxWidth: { xs: 350, md: 250 },
-          }}
-          src={logo}
-          />
+
+        
+        
+        <Card sx={{ maxWidth: 375, borderRadius: 5, p: '20px 20px', position: 'relative', overflow: 'visible'}}>
+        
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',height: '130px', width: '130px', borderRadius: "50%", position: "absolute", top: '-75px', left: '0', right: '0', marginLeft: 'auto', marginRight: 'auto', bgcolor: '#011f5b'}}>
+          <Box sx={{
+              bgcolor: 'white',
+              width: '100px',
+              height: '100px',
+              borderRadius: '50%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <img src={logo} style={{ height: '60%', width: '60%'}}/>
+            </Box>
         </Box>
-        <Card sx={{ maxWidth: 375, borderRadius: 5}}>
-          <CardContent >
+          
+          
+          <CardContent sx={{ mt: '30px'}}>
             <Typography gutterBottom variant="h6" component="div" align="center">
               Log In
             </Typography>

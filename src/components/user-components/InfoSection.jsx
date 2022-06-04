@@ -1,9 +1,9 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import TagChip from "./TagChip.js";
+import TagChip from "./TagChip.jsx";
 import { styled } from "@mui/material/styles";
 
-import { ReactComponent as Edit } from "../assets/svg/Edit.svg";
+import { ReactComponent as Edit } from "../../assets/svg/Edit.svg";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

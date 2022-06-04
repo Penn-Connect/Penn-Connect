@@ -12,9 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
-import { ReactComponent as Logo } from "./assets/svg/logo.svg";
+import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
 
-import "./assets/css/Header.css";
+import "../../assets/css/Header.css";
 
 const pages = ["CONNECT", "EVENTS", "PROJECTS"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

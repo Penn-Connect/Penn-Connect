@@ -2,7 +2,7 @@ import * as React from "react";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
-import "../assets/css/TagChip.css";
+import "../../assets/css/TagChip.css";
 
 export default function TagChip({ value }) {
   const handleClick = () => {
