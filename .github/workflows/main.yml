@@ -9,5 +9,6 @@ jobs:
         uses: peter-evans/create-or-update-project-card@v2
         with:
           token: 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
+          project-location: Penn-Connect
           project-name: Penn-Connect
           column-name: To Do
