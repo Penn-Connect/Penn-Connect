@@ -6,6 +6,8 @@ import User from "./components/User.jsx";
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 import Login from "./components/Login.jsx";
+import SignUp from './components/SignUpForm';
+import Home from './components/Home'
 
 //Creating Custom Theme
 const theme = createTheme({
@@ -77,6 +79,8 @@ export default function App() {
               <Route path="/">
                 <Route index element={ <Login /> } />
                 <Route path="/user" element={ <User /> } />
+                <Route path="/home" element={ <Home /> } />
+                <Route path="/sign-up" element={ <SignUp /> }/>
               </Route>
           </Routes>
         </ThemeProvider>
