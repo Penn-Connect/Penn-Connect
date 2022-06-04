@@ -67,8 +67,17 @@ const theme = createTheme({
       fontSize: 14,
       margin: 0,
     },
-    
-  },
+    },
+
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 481,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
 })
 
 export default function App() {

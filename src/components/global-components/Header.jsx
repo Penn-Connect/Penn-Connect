@@ -69,32 +69,32 @@ const ResponsiveAppBar = ({ name }) => {
 
   return (
     <AppBar id="header" position="static">
-      <Container maxWidth="xl">
+      <Box sx={{ p: '5px 25px'}}>
         <Toolbar disableGutters>
           {/* Logo at desktop app */}
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="a"
             href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+              alignItems: 'center',
+              fontWeight: 600,
               color: "inherit",
               textDecoration: "none",
             }}
           >
             <Logo
               className="logo"
-              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
             />
-            PENNCONNECT
+            ENNCONNECT
           </Typography>
+          
+
           {/* Menu at mobile app */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -130,29 +130,15 @@ const ResponsiveAppBar = ({ name }) => {
               ))}
             </Menu>
           </Box>
+          
           {/* Logo at mobile app */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            <Logo
-              className="logo"
-              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-            />
-            PENNCONNECT
-          </Typography>
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, flex: '1', justifyContent: { sm: 'center'}, alignItems: 'center'}}>
+            <Logo style={{ width: '35px', marginLeft: '10px'}}/>
+            <Typography variant="h4" sx={{ display: { xs: 'none', sm: 'inline'}, fontWeight: '600', ml: '5px'}}>
+              ENNCONNECT
+            </Typography>
+          </Box>
+          
           {/* Menu at desktop app */}
           <Box
             id="desktopHeaderMenu"
@@ -199,7 +185,7 @@ const ResponsiveAppBar = ({ name }) => {
             </Menu>
           </Box>
         </Toolbar>
-      </Container>
+      </Box>
     </AppBar>
   );
 };
