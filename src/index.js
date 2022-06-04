@@ -8,6 +8,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import Login from "./components/Login.jsx";
 import SignUp from './components/SignUpForm';
 import Home from './components/Home'
+import AuthProvider from './contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
 
 //Creating Custom Theme
 const theme = createTheme({
@@ -82,18 +84,24 @@ const theme = createTheme({
 
 export default function App() {
     return (
-      <BrowserRouter>
+        <BrowserRouter>
         <ThemeProvider theme={theme}>
+        <AuthProvider>
             <Routes>
-              <Route path="/">
-                <Route index element={ <Login /> } />
-                <Route path="/user" element={ <User /> } />
-                <Route path="/home" element={ <Home /> } />
-                <Route path="/sign-up" element={ <SignUp /> }/>
-              </Route>
+                  {/* Use Private Route to check if authenticated */}
+                  <Route exact element={ <PrivateRoute /> } >
+                    <Route exact path='/' element={<Home/>}/>
+                  </Route>
+                  {/* Use Private Route to check if authenticated */}
+                  <Route exact element={ <PrivateRoute /> } >
+                    <Route path="/user" element={ <User /> } />
+                  </Route>
+                  <Route path="/login" element={ <Login /> } />
+                  <Route path="/sign-up" element={ <SignUp /> }/>
           </Routes>
+          </AuthProvider>
         </ThemeProvider>
-      </BrowserRouter>
+      </BrowserRouter>  
     )
   }
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,12 +12,15 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
+import { useAuth} from "../../contexts/AuthContext"
+import { Link, useNavigate } from "react-router-dom"
+
 import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
 
 import "../../assets/css/Header.css";
 
 const pages = ["CONNECT", "EVENTS", "PROJECTS"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Logout"];
 
 function stringToColor(string) {
   let hash = 0;
@@ -66,6 +69,22 @@ const ResponsiveAppBar = ({ name }) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const [error, setError] = useState("");
+  const { currentUser, logout } = useAuth();
+  const navigate = useNavigate();
+
+  
+  async function handleLogout() {
+    setError('')
+
+    try {
+      await logout()
+      navigate('/login')
+    } catch {
+      setError('Failed to Log Out')
+    }
+  }
 
   return (
     <AppBar id="header" position="static">
@@ -177,11 +196,13 @@ const ResponsiveAppBar = ({ name }) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Profile</Typography>
+              </MenuItem>
+              
+              <MenuItem onClick={handleLogout}>
+                  <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
