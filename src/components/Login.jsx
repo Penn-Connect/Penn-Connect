@@ -34,8 +34,6 @@ export default function MediaCard() {
         paddingTop= '81.25%'
         src={logo}
         /> */}
-
-        
         
         <Card sx={{ maxWidth: 375, borderRadius: 5, p: '20px 20px', position: 'relative', overflow: 'visible'}}>
         
@@ -55,7 +53,7 @@ export default function MediaCard() {
           
           
           <CardContent sx={{ mt: '30px'}}>
-            <Typography gutterBottom variant="h6" component="div" align="center">
+            <Typography gutterBottom variant="h4" component="div" align="center">
               Log In
             </Typography>
             <Grid align='center' style={{width: "325px"}}>
@@ -72,7 +70,7 @@ export default function MediaCard() {
                 </FormGroup>
                 <Button 
                     sx={{
-                    bgcolor: '#011f5b',
+                    bgcolor: 'primary.main',
                     borderRadius: 2,
                     mb: 1.5,
                     }} 
@@ -84,8 +82,8 @@ export default function MediaCard() {
                 <Button 
                     sx={{
                     borderRadius: 2,
-                    color:"#990000",
-                    borderColor: "#990000",
+                    color:"secondary",
+                    borderColor: "secondary",
                     }} 
                     fullWidth required
                     variant="outlined">
@@ -101,7 +99,7 @@ export default function MediaCard() {
             fontSize: '15px',
             textTransform: 'none',
             }}>
-            Join an upcoming cohort
+            Join an Upcoming Cohort
           </Button>
       </Grid>
     </Box>
