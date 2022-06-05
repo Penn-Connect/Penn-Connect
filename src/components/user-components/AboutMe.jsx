@@ -1,9 +1,6 @@
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import TagChip from "./TagChip.js";
 import { styled } from "@mui/material/styles";
-
-import { ReactComponent as Edit } from "../assets/svg/Edit.svg";
+import Paper from "@mui/material/Paper";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -13,18 +10,13 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function InfoSection({ title, collection }) {
+export default function AboutMe({ about }) {
   return (
     <Grid className="card" item>
       <Item>
         <section className="flexBoxCol left">
-          <div className="header">{title}</div>
-          <Edit className="editBtn" />
-          <div className="flexBoxRow">
-            {collection.map((ele, i) => {
-              return <TagChip key={ele + i} value={ele} />;
-            })}
-          </div>
+          <div className="about">About Me</div>
+          <div className="aboutDesc">{about}</div>
         </section>
       </Item>
     </Grid>
