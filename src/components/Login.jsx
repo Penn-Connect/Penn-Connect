@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState, useRef} from "react";
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
@@ -7,17 +7,48 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { makeStyles, TextField } from '@mui/material';
+import { Alert, makeStyles, TextField } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
 import { FormControlLabel } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import logo from "../assets/svg/logo.svg";
 import Header from "../components/global-components/Header.jsx"
 
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'
+
 import "../assets/css/Login.css";
 import { flexbox } from "@mui/system";
 
 export default function MediaCard() {
+
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const { login } = useAuth()
+
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+  const navigate= useNavigate()
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    //try to login
+    try {
+        //resets error if successful
+        setError("")
+        //turn Loading True
+        setLoading(true)
+        //login using firebase
+        await login(emailRef.current.value, passwordRef.current.value)
+        //redirect to Dashboard
+        navigate("/")
+    } catch {
+        setError("Failed to Login")
+    }
+    setLoading(false)
+  }
+
   // const styles = useStyles();
   return (
     <Box class ="box">
@@ -52,29 +83,46 @@ export default function MediaCard() {
         </Box>
           
           
-          <CardContent sx={{ mt: '30px'}}>
+          <CardContent component="form" onSubmit={handleSubmit} sx={{ mt: '30px'}}>
             <Typography gutterBottom variant="h4" component="div" align="center">
               Log In
             </Typography>
+            
+            {error && <Alert severity='error' sx={{ mb: '20px' }}>{error}</Alert> }
+
             <Grid align='center' style={{width: "325px"}}>
               <Grid container direction={"column"} spacing={1}>
                 <Grid item>
-                  <TextField placeholder='Email' fullWidth required/>
+                  <TextField
+                  required
+                  label="Email"
+                  type="email"
+                  fullWidth 
+                  inputRef={emailRef}
+                  />
                 </Grid>
+                
                 <Grid item>
-                  <TextField placeholder='Password' fullWidth required/>
+                  <TextField
+                    required
+                    type="password" 
+                    fullWidth 
+                    label="Password"
+                    inputRef={passwordRef}
+                  />
                 </Grid>
               </Grid>
                 <FormGroup>
                   <FormControlLabel control={<Checkbox  />} label="Remember Me" />
                 </FormGroup>
-                <Button 
+                <Button
+                    type="submit"
                     sx={{
                     bgcolor: 'primary.main',
                     borderRadius: 2,
                     mb: 1.5,
                     }} 
-                    fullWidth required
+                    fullWidth
                     variant="contained">
                     LOG IN
                 </Button>
@@ -85,13 +133,14 @@ export default function MediaCard() {
                     color:"secondary",
                     borderColor: "secondary",
                     }} 
-                    fullWidth required
+                    fullWidth
                     variant="outlined">
                     FORGOT PASSWORD
                 </Button>
             </Grid>
           </CardContent>
         </Card>
+        <Link to="/sign-up">
         <Button 
           sx={{
             borderRadius: 2,
@@ -101,6 +150,7 @@ export default function MediaCard() {
             }}>
             Join an Upcoming Cohort
           </Button>
+          </Link>
       </Grid>
     </Box>
   );
