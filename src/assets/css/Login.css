@@ -1,0 +1,22 @@
+.cardMedia{
+    border-radius: '50%';
+}
+
+.circle{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: #011f5b;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: "100vh";
+    display: "flex";
+    /* flexDirection:"column"; */
+    background-color: #011f5b
+}
+
