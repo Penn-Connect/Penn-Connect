@@ -1,5 +1,5 @@
 import Chip from "@mui/material/Chip";
-import "../../assets/css/ClassBadge.css";
+import "../../assets/css/user-components/ClassBadge.css";
 
 export default function ClassBadge({ course }) {
   return (

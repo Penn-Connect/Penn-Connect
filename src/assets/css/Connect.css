@@ -1,0 +1,59 @@
+#connectPage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaeaea;
+}
+
+#connectPage .profile {
+  display: flex;
+  justify-content: center;
+}
+
+#connectContainer {
+  height: 80%;
+  width: 96%;
+  display: flex;
+  align-items: center;
+}
+
+#connectContainerMain {
+  height: 100%;
+}
+
+#connectContainerMain .name {
+  font-weight: bold;
+}
+
+#connectContainerMain .MuiPagination-ul {
+  position: absolute;
+  bottom: 19px;
+  width: 60%;
+  /* width: 100%; */
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: center;
+}
+
+#connectContainerMain .MuiAvatar-root {
+  margin: 10px;
+}
+#connectContainerMain .description {
+  margin: 0px 10px;
+}
+
+.searchResultPage {
+  width: 100%;
+}
+
+.bullet {
+  padding: 0px 10px;
+}
+
+.moreBtn {
+  position: absolute;
+  right: 4%;
+}

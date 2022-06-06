@@ -1,7 +1,7 @@
 import { ReactComponent as Linkedin } from "../../assets/svg/Linkedin.svg";
 import { ReactComponent as Github } from "../../assets/svg/Github.svg";
 import { ReactComponent as Email } from "../../assets/svg/Gmail.svg";
-import "../../assets/css/SocialBadge.css";
+import "../../assets/css/user-components/SocialBadge.css";
 
 const icons = {
   Linkedin: Linkedin,
