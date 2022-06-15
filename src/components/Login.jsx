@@ -140,16 +140,12 @@ export default function MediaCard() {
             </Grid>
           </CardContent>
         </Card>
-        <Link to="/sign-up">
-        <Button 
-          sx={{
-            borderRadius: 2,
-            color:"#ffffff",
+        <Link to="/sign-up" 
+          style={{textDecoration: 'none',color:"#ffffff",
             fontSize: '15px',
             textTransform: 'none',
-            }}>
-            Join an Upcoming Cohort
-          </Button>
+            marginTop: '10px'
+          }}> Join an Upcoming Cohort
           </Link>
       </Grid>
     </Box>
