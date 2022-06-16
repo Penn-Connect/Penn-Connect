@@ -8,6 +8,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Login from "./components/Login.jsx";
 import SignUp from "./components/SignUpForm";
 import Home from "./components/Home";
+import Profile from "./components/Profile";
 import AuthProvider from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -92,6 +93,7 @@ export default function App() {
             <Route exact element={<PrivateRoute />}>
               <Route path="/user" element={<User />} />
               <Route path="/home" element={<Home perPage={3} />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />

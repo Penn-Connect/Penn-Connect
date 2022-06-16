@@ -30,12 +30,11 @@ function SignUp() {
             //signup using firebase
             await signup(emailRef.current.value, passwordRef.current.value)
             //navigate to Dashboard after success
-            navigate("/")
+            navigate("/profile")
         } catch {
             setError("Failed to create an account")
         }
         setLoading(false)
-        
     }
 
     return (
@@ -45,7 +44,7 @@ function SignUp() {
                 <Typography variant="h3" textAlign="center">
                     Sign Up
                 </Typography>
-                {error && <Alert severity='error'>{error}</Alert> }
+                {error && <Alert severity='error'>{error}</Alert>}
                 
                 <TextField
                 required
