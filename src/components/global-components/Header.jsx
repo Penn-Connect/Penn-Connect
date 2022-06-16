@@ -34,7 +34,7 @@ const ResponsiveAppBar = ({ name }) => {
     setAnchorElUser(event.currentTarget);
   };
   const handleConnect = () => {
-    navigate("/connect");
+    navigate("/home");
     setAnchorElNav(null);
   };
   const handleEvents = () => {

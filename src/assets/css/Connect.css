@@ -57,3 +57,40 @@
   position: absolute;
   right: 4%;
 }
+
+#connectPage .searchContainer {
+  height: 90%;
+  width: 90%;
+}
+
+#connectPage .search {
+  width: 96%;
+}
+
+#connectPage #status {
+  display: flex;
+  align-items: flex-start;
+  padding: 0px 10px;
+}
+
+#connectPage #status input {
+}
+
+#connectPage .selection {
+  margin: 20px 5px;
+}
+
+#connectPage #searchBtn {
+  position: absolute;
+  bottom: 10%;
+  left: calc(3% - 4px);
+  width: 20%;
+}
+
+#connectPage .searchContainer .MuiChip-root {
+  background-color: #011f5b !important;
+  color: white !important;
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
+  /* margin: 5px 5px !important; */
+}

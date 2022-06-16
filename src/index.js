@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/css/index.css";
 import User from "./components/User.jsx";
-import Connect from "./components/Connect.jsx";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Login from "./components/Login.jsx";
@@ -87,12 +86,12 @@ export default function App() {
           <Routes>
             {/* Use Private Route to check if authenticated */}
             <Route exact element={<PrivateRoute />}>
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" element={<Home perPage={3} />} />
             </Route>
             {/* Use Private Route to check if authenticated */}
             <Route exact element={<PrivateRoute />}>
               <Route path="/user" element={<User />} />
-              <Route path="/connect" element={<Connect />} />
+              <Route path="/home" element={<Home perPage={3} />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
