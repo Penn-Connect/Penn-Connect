@@ -76,7 +76,7 @@ function SignUp() {
 
     return (
         <Box sx={{ bgcolor: 'primary.main', height: '100%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <Card component="form" onSubmit={handleSubmit} sx={{overflow: 'auto', mt: "30px", height: "100%", p: '40px', display: 'flex', flexDirection: 'column', width: '50%', gap: '10px', borderRadius: 5}}>
+            <Card component="form" onSubmit={handleSubmit} sx={{overflow: 'auto', mt: "30px", height: "100%", p: '40px', display: 'flex', flexDirection: 'column', width: '50%', gap: '5px', borderRadius: 5}}>
                 
                 <div>
                     {currentUser && currentUser.email}
@@ -90,84 +90,73 @@ function SignUp() {
                     </Box>
                 </div> */}
 
-
-                <Typography variant="h3" textAlign="center">
-                    Sign Up
-                </Typography>
                 {error && <Alert severity='error'>{error}</Alert> }
                 
                 {/* basic info section */}
-                <Grid container spacing={1} direction="column" sx={{px: 15, justifyContent: 'center'}}>
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
+                <Grid container spacing={1} direction="column" sx={{px: 5, justifyContent: 'center'}}>
+                    <Typography variant="h4" textAlign="left">
+                        Tell Us More About Yourself
+                    </Typography>
+                    <Typography gutterBottom variant="h6" sx={{pt: 2}}>
                         Basic Info
                     </Typography>
                     
-                        <Grid item>
-                            <TextField
-                            required
-                            id="first-name"
-                            label="First Name"
-                            type="firstName"
-                            inputRef={firstName}
-                            style ={{width: '100%', textAlign: 'center'}} inputProps={{ style: {textAlign: 'center'}}} 
-                            />
-                        </Grid>
-                        <Grid item>
-                            <TextField
-                            required
-                            id="last-name"
-                            label="Last Name"
-                            type="last-name"
-                            inputRef={lastName}
-                            style ={{width: '100%'}}
-                            />
-                        </Grid>
-                    
+                    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2}}>
+                        <TextField
+                        required
+                        id="first-name"
+                        label="First Name"
+                        type="firstName"
+                        inputRef={firstName}
+                        variant="outlined"
+                        />
+                        <TextField
+                        required
+                        id="last-name"
+                        label="Last Name"
+                        type="last-name"
+                        variant="outlined"
+                        inputRef={lastName}
+                        />
+                    </Box>
 
                     {/* links and websites section */}
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
+                    <Typography gutterBottom variant="h6" sx={{pt: 2}}>
                         Links and Websites
                     </Typography>
-                    
-                        <Grid item>
-                            <TextField
-                            id="email"
-                            label="Email"
-                            type="email"
-                            inputRef={emailRef}
-                            style ={{width: '100%'}}  
-                            />
-                        </Grid>
-                        <Grid item>
-                            <TextField
-                            id="github"
-                            label="GitHub"
-                            type="github"
-                            inputRef={github}
-                            style ={{width: '100%', textAlign: 'center'}} 
-                            />
-                        </Grid>
-                        <Grid item>
-                            <TextField
-                            id="kaggle"
-                            label="Kaggle"
-                            type="kaggle"
-                            inputRef={kaggle}
-                            style ={{width: '100%', textAlign: 'center'}} 
-                            />
-                        </Grid>  
-                        <Grid item>
-                            <TextField
-                            id="linkedin"
-                            label="LinkedIn"
-                            type="linkedin"
-                            inputRef={linkedin}
-                            style ={{width: '100%'}} 
-                            />
-                        </Grid>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2}}>
+                        <TextField
+                        id="email"
+                        label="Email"
+                        type="email"
+                        inputRef={emailRef}
+                        style ={{width: '100%'}}  
+                        />
+                        <TextField
+                        id="github"
+                        label="GitHub"
+                        type="github"
+                        inputRef={github}
+                        style ={{width: '100%', textAlign: 'center'}} 
+                        />
+                        <TextField
+                        id="kaggle"
+                        label="Kaggle"
+                        type="kaggle"
+                        inputRef={kaggle}
+                        style ={{width: '100%', textAlign: 'center'}} 
+                        />
+                        <TextField
+                        id="linkedin"
+                        label="LinkedIn"
+                        type="linkedin"
+                        inputRef={linkedin}
+                        style ={{width: '100%'}} 
+                        />
+                    </Box>
 
                     {/* introduction section */}
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
+                    <Typography gutterBottom variant="h6" sx={{pt: 2}}>
                         About Me
                     </Typography>
                         <Grid item>
@@ -176,108 +165,140 @@ function SignUp() {
                             label="2 to 3 sentences to introduce yourself!"
                             type="about"
                             multiline
-                            rows={4}
+                            rows={3}
                             style ={{width: '100%', textAlign: 'center', height: '200'}}
                             inputRef={bio}
                             />
                         </Grid>
                     
-                    {/* programming languages section */}
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
-                        Programming Languages
-                    </Typography>
-                    <div>
-                        <Autocomplete
-                            multiple
-                            freeSolo
-                            id="programming-languages"
-                            options={["Java", "Python"]}
-                            defaultValue={["Java", "Python"]}
-                            inputRef={programs}
-                            renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                variant="outlined"
-                                placeholder="Enter languages"
-                            />
-                            )}
-                        />
-                    </div>
-                    
-                    {/* openness to projects section */}
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
-                        Open to Projects
-                    </Typography>
-                    <Select
-                        labelId='project'
-                        id='project'
-                        value={booleanVal}
-                        onChange={handleProjectPref}
-                        inputRef={project}
-                    >
-                        <MenuItem value={"Yes"}>Yes </MenuItem>
-                        <MenuItem value={"No"}>No</MenuItem>
-                    </Select>
 
-                    {/* hobbies section */}
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
-                        Hobbies
-                    </Typography>
-                    <div>
-                        <Autocomplete
-                            multiple
-                            freeSolo
-                            id="hobbies"
-                            options={["Tennis", "Music"]}
-                            defaultValue={["Tennis", "Music"]}
-                            renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                variant="outlined"
-                                placeholder="Enter hobbies"
-                            />
-                            )}
-                        />
-                    </div>
-                    {/* <Formik
-                        onSubmit={values => {
-                            console.log(values);
-                        }}
-                        render={({values}) => {
-                            return(
-                                <form>
-                                    <Field
-                                    name={'hobbies'}    
-                                    component ={ChipInput}
+                    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2}}>
+                        <div>
+                            {/* programming languages section */}
+                            <Typography gutterBottom variant="h6" sx={{pt: 2}}>
+                                Programming Languages
+                            </Typography>
+                            <div>
+                                <Autocomplete
+                                    multiple
+                                    freeSolo
+                                    id="programming-languages"
+                                    options={["Java", "Python"]}
+                                    defaultValue={["Java", "Python"]}
+                                    inputRef={programs}
+                                    renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        variant="outlined"
                                     />
-                                </form>
-                            )
-                        }}
-                    /> */}
-               
-                    
-                    {/* industries section */}
-                    <Typography gutterBottom variant="h5" sx={{pt: 3}}>
-                        Industries
-                    </Typography>
-                    <div>
-                        <Autocomplete
-                            multiple
-                            freeSolo
-                            id="industries"
-                            options={["Healthcare", "Tech"]}
-                            defaultValue={["Healthcare", "Tech"]}
-                            renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                variant="outlined"
-                                placeholder="Enter industry"
-                            />
-                            )}
-                        />
-                    </div>
+                                    )}
+                                />
+                            </div>
+                        </div>
 
-                    
+                        <div>
+                            {/* hobbies section */}
+                            <Typography gutterBottom variant="h6" sx={{pt: 2}}>
+                                Hobbies
+                            </Typography>
+                            <div>
+                            <Autocomplete
+                                multiple
+                                freeSolo
+                                id="hobbies"
+                                options={["Tennis", "Music"]}
+                                defaultValue={["Tennis", "Music"]}
+                                renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    variant="outlined"
+                                />
+                                )}/>
+                            </div>
+                        </div>
+
+                        <div>
+                            {/* industries section */}
+                            <Typography gutterBottom variant="h6">
+                                Industries
+                            </Typography>
+                            <div>
+                                <Autocomplete
+                                    multiple
+                                    freeSolo
+                                    id="industries"
+                                    options={["Healthcare", "Tech"]}
+                                    defaultValue={["Healthcare", "Tech"]}
+                                    renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        variant="outlined"
+                                    />
+                                    )}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            {/* Classes Completed */}
+                            <Typography gutterBottom variant="h6">
+                                Classes Completed
+                            </Typography>
+                            <div>
+                                <Autocomplete
+                                    multiple
+                                    freeSolo
+                                    id="classes"
+                                    options={["CIT591", "CIT592"]}
+                                    defaultValue={["CIT591", "CIT592"]}
+                                    renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        variant="outlined"
+                                    />
+                                    )}
+                                />
+                            </div>
+                        </div>
+                    </Box>
+
+                    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2}}>
+                        {/* openness to projects section */}
+                        <div>
+                            <Typography gutterBottom variant="h6" sx={{pt: 2}}>
+                                Open to Projects
+                            </Typography>
+                            <Select
+                                labelId='project'
+                                id='project'
+                                value={booleanVal}
+                                onChange={handleProjectPref}
+                                inputRef={project}
+                                style={{width: '100%'}}
+                            >
+                                <MenuItem value={"Yes"}>Yes </MenuItem>
+                                <MenuItem value={"No"}>No</MenuItem>
+                            </Select>
+                        </div>
+
+                        {/* student status section */}
+                        <div>
+                            <Typography gutterBottom variant="h6" sx={{pt: 2}}>
+                                Student Status
+                            </Typography>
+                            <Select
+                                labelId='status'
+                                id='statis'
+                                value={booleanVal}
+                                onChange={handleProjectPref}
+                                inputRef={project}
+                                style={{width: '100%'}}
+                            >
+                                <MenuItem value={"Student"}>Student </MenuItem>
+                                <MenuItem value={"Alumni"}>Alumni</MenuItem>
+                            </Select>
+                        </div>
+                    </Box>
                 </Grid>
                 
                 <Box textAlign='center'>
